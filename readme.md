@@ -19,3 +19,6 @@
 + how to ... 
 ++ activate virtual environment
 ++`pip install -r requirements.txt`
+
+# additional info
++ it's a good idea to start with setting up models.py first, because they're going to dictate the whole projects run setups
