@@ -22,3 +22,5 @@
 
 # additional info
 + it's a good idea to start with setting up models.py first, because they're going to dictate the whole projects run setups
++ once models are set up, it's time to set up forms
++ this includes widgets to handle css classes
