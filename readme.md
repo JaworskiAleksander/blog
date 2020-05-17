@@ -3,7 +3,7 @@
 ## Project description
 + multiple users
 + more complex than just function views
-+ multiple apps and corresponding models
++ single app this time
 
 ## Project history
 + pull repo
