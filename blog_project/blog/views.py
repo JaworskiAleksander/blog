@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import (TemplateView, ListView, DetailView)
+from django.views.generic import (TemplateView, ListView, DetailView, CreateView)
 from blog.models import Post, Comment
 from django.utils import timezone
 
@@ -17,4 +17,7 @@ class PostListView(ListView):
         return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
 class PostDetailView(DetailView):
+    model = Post
+
+class PostCreateView(CreateView):
     model = Post
