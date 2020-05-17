@@ -1,8 +1,13 @@
+# django imports
 from django.shortcuts import render
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView)
-from blog.models import Post, Comment
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+# blog app import
+from blog.models import Post, Comment
+from blog.forms import PostForm, CommentForm
 
 # Create your views here.
 class AboutView(TemplateView):
