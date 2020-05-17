@@ -16,4 +16,9 @@ class Post(models.Model):
     # this set up allow for creating posts in advance, and posting them in a specific order
     # or when the user is offline and a post is scheduled at that time
     # what's the difference between blank and null? RTFM, FFS
-    
+
+    def publish(self):
+        # set the time post is published
+        self.published_date = timezone.now()
+        # save the change into database
+        self.save()
