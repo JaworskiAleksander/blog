@@ -45,4 +45,8 @@ class Comment(models.Model):
     # by default comment is not approved, only admin can change this field
     approved_comment = models.BooleanField(default=False)
 
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
 
