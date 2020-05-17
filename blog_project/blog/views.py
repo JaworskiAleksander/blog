@@ -20,5 +20,7 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+# function based view - import login_required from django.contrib.auth.decorators
+# class-based views - import LoginRequiredMixin from django.contrib.auth.mixins
 class PostCreateView(CreateView):
     model = Post
