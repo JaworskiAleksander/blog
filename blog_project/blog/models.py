@@ -26,7 +26,23 @@ class Post(models.Model):
     def approve_comments(self):
         # only approved comments will be displayed
         # this method is how you change that attribute
-        return self.comments.filter(approved_comments=True)
+        return self.comments.filter(approved_comment=True)
 
     def __str__(self):
         return self.title[:25]
+
+
+class Comment(models.Model):
+    # each comment is related to an instance of blog.Post class
+    # it's connected via 'comments' alias
+    post = models.ForeignKey('blog.Post', related_name='comments')
+    # who's the author
+    author = models.CharField(max_length=256)
+    # message
+    text = models.TextField(max_length=512)
+    # comment creation date, default is now(), no user has no access to this field
+    create_date = models.DateTimeField(default=timezone.now())
+    # by default comment is not approved, only admin can change this field
+    approved_comment = models.BooleanField(default=False)
+
+
