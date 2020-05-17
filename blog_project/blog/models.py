@@ -27,3 +27,6 @@ class Post(models.Model):
         # only approved comments will be displayed
         # this method is how you change that attribute
         return self.comments.filter(approved_comments=True)
+
+    def __str__(self):
+        return self.title[:25]
