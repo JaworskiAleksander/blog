@@ -22,3 +22,8 @@ class Post(models.Model):
         self.published_date = timezone.now()
         # save the change into database
         self.save()
+
+    def approve_comments(self):
+        # only approved comments will be displayed
+        # this method is how you change that attribute
+        return self.comments.filter(approved_comments=True)
