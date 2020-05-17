@@ -27,5 +27,16 @@ class PostDetailView(DetailView):
 
 # function based view - import login_required from django.contrib.auth.decorators
 # class-based views - import LoginRequiredMixin from django.contrib.auth.mixins
-class PostCreateView(CreateView):
+class PostCreateView(CreateView, LoginRequiredMixin):
     model = Post
+
+    # defining attributes from LoginRequiredMixins
+    # when user is not logged in, and wants to use this view, redirect them here:
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_detail.html'
+    persmission_denied_message = 'YOU SHALL NOT POST HERE!'
+
+    # from django doc: https://docs.djangoproject.com/en/3.0/ref/class-based-views/mixins-editing/#django.views.generic.edit.FormMixin.form_class
+    # The form class HAS TO instantiate
+    form_class = PostForm
+
