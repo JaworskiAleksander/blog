@@ -10,6 +10,14 @@ class PostForm(forms.ModelForm):
         # why tuples here? because they're IMMUTABLE
         fields = ('author', 'title', 'text')
 
+        # adding widgets to mess with css later
+        # all inside Meta class
+        widgets = {
+            'title': forms.TextInput(attrs={'class':'textinputclass'}),
+            # long class name, because later we'll be working with Medium text editor
+            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'})
+        }
+
 
 class CommentForm(forms.ModelForm):
 
