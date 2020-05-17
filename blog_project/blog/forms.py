@@ -11,3 +11,8 @@ class PostForm(forms.ModelForm):
         fields = ('author', 'title', 'text')
 
 
+class CommentForm(forms.ModelForm):
+
+    class Meta():
+        model = Comment
+        fields = ('author', 'text')
