@@ -31,6 +31,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title[:25]
 
+    def get_absolute_url(self):
+        # after the psot is created, go to post_detail.html
+        # with index of self.pk
+        return reverse("post_detail", kwargs={"pk": self.pk})
+    
+
 
 class Comment(models.Model):
     # each comment is related to an instance of blog.Post class
