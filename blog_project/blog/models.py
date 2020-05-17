@@ -58,3 +58,9 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
+    # since a comment has to be approved first, before it can be viewed, it doens't make sense
+    # to go see it after commenting
+    # lets go to post page and display message
+    # 'comment added, awaiting for approval'
+    def get_absolute_url(self):
+        return reverse("post_list", kwargs={"pk": self.pk})
