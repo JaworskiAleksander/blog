@@ -8,7 +8,7 @@ class AboutView(TemplateView):
     template_name = 'about.html'
 
 class PostListView(ListView):
-    model = models.Post
+    model = Post
 
     # this allows to use django ORL
     def get_queryset(self):
