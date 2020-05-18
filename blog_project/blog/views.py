@@ -100,4 +100,13 @@ def comment_approve(request,pk):
 
 @login_required(login_url='login')
 def comment_remove(request, pk):
+    # get the Comment object with id = pk, return 404 if not found
+    comment = get_object_or_404(Comment, pk=pk)
+    # save post.pk it was attached to, we'll use it later, after the comment is deleted
+    post_pk = comment.post.pk
+    # delete the comment
+    comment.delete()
+    # return to the page this comment was attached to
+    return redirect('post_detail', pk=post_pk)
+
     pass
