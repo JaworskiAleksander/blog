@@ -13,7 +13,18 @@ from django.urls import reverse_lazy
 from blog.models import Post, Comment
 from blog.forms import PostForm, CommentForm
 
-# Create your views here.
+#----------------------------------------
+# Class Views
+#----------------------------------------
+# List of Views:
+# AboutView
+# PostListView
+# PostDetailView
+# PostCreateView
+# PostUpdateView
+# PostDeleteView
+# Drafts
+
 class AboutView(TemplateView):
     template_name = 'about.html'
 
