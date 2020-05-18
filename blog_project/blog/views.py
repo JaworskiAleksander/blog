@@ -48,3 +48,4 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
     # defining values of atributes that come from UpdateView class
     model = Post
+    # attributes for Create and Update are the same, and it makes sense
