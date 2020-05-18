@@ -5,6 +5,7 @@ from django.views.generic import (TemplateView, ListView,
                                   UpdateView, DeleteView)
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 
 # blog app import
@@ -54,6 +55,9 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
+    # revrse_lazy is activated AFTER the action is completed, which makes it safe to use here
+    # once a post is successfuly deleted, let's go to homepage
+    success_url = reverse_lazy('post_list')
     
 
     pass
