@@ -53,6 +53,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     # attributes for Create and Update are the same, and it makes sense
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
     
 
     pass
