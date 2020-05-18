@@ -1,6 +1,6 @@
 # django imports
 from django.shortcuts import render
-from django.views.generic import (TemplateView, ListView, DetailView, CreateView)
+from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView)
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -40,3 +40,9 @@ class PostCreateView(CreateView, LoginRequiredMixin):
     # The form class HAS TO instantiate
     form_class = PostForm
 
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    # defining values of atributes that come from LoginRequiredMixin class
+
+
+    # defining values of atributes that come from UpdateView class
+    pass
