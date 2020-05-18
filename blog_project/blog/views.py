@@ -78,7 +78,9 @@ class Drafts(LoginRequiredMixin, ListView):
 
 @login_required(login_url='/login/')
 def add_comment_to_post(request, pk):
+    # either get the Post object from dataase, with an id=pk, or return 404
     post = get_object_or_404(Post, pk=pk)
+    # if someone filled in the form
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -89,5 +91,3 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/comment_form.html', {'form': form})
-
-    pass
