@@ -91,3 +91,7 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/comment_form.html', {'form': form})
+
+@login_required(login_url='login')
+def comment_approve(request,pk):
+    pass
