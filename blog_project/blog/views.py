@@ -1,5 +1,5 @@
 # django imports
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404, redirect
 from django.views.generic import (TemplateView, ListView,
                                   DetailView, CreateView,
                                   UpdateView, DeleteView)
@@ -70,3 +70,9 @@ class Drafts(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Post.objects.filter(published_date__isnull=True).order_by('-create_date')
+
+
+#----------------------------------------
+# Drafts
+def add_comment_to_post(request, pk):
+    pass
