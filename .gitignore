@@ -194,4 +194,5 @@ pip-selfcheck.json
 
 # project settings
 myvenv/
+myvenv/*
 local_settings.py
