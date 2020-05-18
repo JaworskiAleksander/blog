@@ -42,7 +42,9 @@ class PostCreateView(CreateView, LoginRequiredMixin):
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     # defining values of atributes that come from LoginRequiredMixin class
-
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_detail.html'
+    persmission_denied_message = 'YOU HAVE NO POWER HERE!'
 
     # defining values of atributes that come from UpdateView class
     pass
