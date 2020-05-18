@@ -108,5 +108,3 @@ def comment_remove(request, pk):
     comment.delete()
     # return to the page this comment was attached to
     return redirect('post_detail', pk=post_pk)
-
-    pass
