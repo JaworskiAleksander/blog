@@ -94,4 +94,6 @@ def add_comment_to_post(request, pk):
 
 @login_required(login_url='login')
 def comment_approve(request,pk):
-    pass
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.approve()
+    return redirect('post_detail', pk=comment.post.pk)
