@@ -27,3 +27,13 @@
 + third step - create views, templates and connecting it all in urlpatterns
 + view -> template -> url
 + templates are the next to go, once models, views and urls are set up
+
+# Work Log
+- [x] git init
+- [x] set up virtualenv, project and app folders
+- [x] settings.py
+- [x] folder structure
+- [x] blog app models, widgets
+- [x] CRUD class-bsed views
+- [x] function views
+- [ ] authentication system, on top of superuser
