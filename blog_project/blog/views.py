@@ -36,7 +36,7 @@ class PostCreateView(CreateView, LoginRequiredMixin):
     # when user is not logged in, and wants to use this view, redirect them here:
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
-    persmission_denied_message = 'YOU SHALL NOT POST HERE!'
+    permission_denied_message = 'YOU SHALL NOT POST HERE!'
 
     # from django doc: https://docs.djangoproject.com/en/3.0/ref/class-based-views/mixins-editing/#django.views.generic.edit.FormMixin.form_class
     # The form class HAS TO instantiate
@@ -46,13 +46,15 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     # defining values of atributes that come from LoginRequiredMixin class
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
-    persmission_denied_message = 'YOU HAVE NO POWER HERE!'
+    permission_denied_message = 'YOU HAVE NO POWER HERE!'
 
     # defining values of atributes that come from UpdateView class
     model = Post
     # attributes for Create and Update are the same, and it makes sense
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
+    
+
     pass
 
 # all posts, before publishing, are labeled as drafts, thus this view is also necessary
