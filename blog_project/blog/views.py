@@ -51,3 +51,9 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     # defining values of atributes that come from UpdateView class
     model = Post
     # attributes for Create and Update are the same, and it makes sense
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    pass
+
+# all posts, before publishing, are labeled as drafts, thus this view is also necessary
+# class Drafts()
