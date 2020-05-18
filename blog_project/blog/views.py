@@ -74,7 +74,13 @@ class Drafts(LoginRequiredMixin, ListView):
 
 
 #----------------------------------------
-# Drafts
+# Function Views
+#----------------------------------------
+# List of Views:
+# add_comment_to_post
+# comment_appove
+# comment_remove
+# post_publish
 
 @login_required(login_url='login')
 def add_comment_to_post(request, pk):
@@ -108,3 +114,7 @@ def comment_remove(request, pk):
     comment.delete()
     # return to the page this comment was attached to
     return redirect('post_detail', pk=post_pk)
+
+@login_required(login_url='login')
+def post_publish(request,pk):
+    pass
