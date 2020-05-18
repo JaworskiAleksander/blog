@@ -117,4 +117,12 @@ def comment_remove(request, pk):
 
 @login_required(login_url='login')
 def post_publish(request,pk):
+    # get the Post object from database, or return 404
+    post = get_object_or_404(Post, pk=pk)
+    # execute publish(), defined in Post class model
+    # this class method sets published_date to timezone.now()
+    post.publish()
+    return redirect('post_detail', pk=pk)
+
+
     pass
