@@ -26,3 +26,4 @@
 + this includes widgets to handle css classes
 + third step - create views, templates and connecting it all in urlpatterns
 + view -> template -> url
++ templates are the next to go, once models, views and urls are set up
