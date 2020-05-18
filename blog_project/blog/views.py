@@ -47,4 +47,4 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     persmission_denied_message = 'YOU HAVE NO POWER HERE!'
 
     # defining values of atributes that come from UpdateView class
-    pass
+    model = Post
