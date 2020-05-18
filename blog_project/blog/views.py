@@ -76,7 +76,7 @@ class Drafts(LoginRequiredMixin, ListView):
 #----------------------------------------
 # Drafts
 
-@login_required(login_url='/login/')
+@login_required(login_url='login')
 def add_comment_to_post(request, pk):
     # either get the Post object from dataase, with an id=pk, or return 404
     post = get_object_or_404(Post, pk=pk)
