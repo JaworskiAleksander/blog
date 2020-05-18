@@ -63,4 +63,9 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
     pass
 
 # all posts, before publishing, are labeled as drafts, thus this view is also necessary
-# class Drafts()
+class Drafts(LoginRequiredMixin, ListView):
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_list.html'
+    model = Post
+
+    
