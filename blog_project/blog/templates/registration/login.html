@@ -5,6 +5,12 @@
 <div class="jumbotron">
     <h3>Login</h3>
     <h4 class="lead text-muted">(Must be superuser)</h4>
+
+    {% if form.errors %}
+    <div  class="btn btn-outline-danger">
+        <p>Your username and/or password did not match</p>
+    </div>
+    {% endif%}
 </div>
 
 {% endblock %}
