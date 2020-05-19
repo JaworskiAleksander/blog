@@ -31,10 +31,10 @@
 
 </head>
 <body>
-    <div class="container">
     <p>Hello world</p>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary techfont">
+        <div class="container">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -72,10 +72,10 @@
               {% endif %}
           </ul>
         </div>
+    </div>
     </nav>
     {% block body_block %}
 
     {% endblock %}
-</div>
 </body>
 </html>
