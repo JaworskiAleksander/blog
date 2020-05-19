@@ -4,6 +4,9 @@
     margin-bottom: 10px;
 }
 
+.brand-styling{
+    font-size: 1.5em;    
+}
   
   .loader {
     filter:hue-rotate(0deg);
