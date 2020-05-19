@@ -1,8 +1,9 @@
 .techfont{
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
-  
+
   
   .loader {
     filter:hue-rotate(0deg);
