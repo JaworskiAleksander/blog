@@ -8,9 +8,16 @@
 
     {% if form.errors %}
     <div  class="btn btn-outline-danger">
-        <p>Your username and/or password did not match</p>
+        <p>Username and/or password did not match</p>
     </div>
     {% endif%}
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {% form.as_p %}
+        <input type="submit" value="LOGIN" class="btn btn-outline-secondary">
+        <input type="hidden" value="{{ next }}" name="next">
+    </form>
 </div>
 
 {% endblock %}
