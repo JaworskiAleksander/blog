@@ -27,6 +27,7 @@
 + third step - create views, templates and connecting it all in urlpatterns
 + view -> template -> url
 + templates are the next to go, once models, views and urls are set up
++ medium style editor added via pip, registered in INSTALLED_APPS
 
 # Work Log
 - [x] git init
@@ -36,4 +37,6 @@
 - [x] blog app models, widgets
 - [x] CRUD class-bsed views
 - [x] function views
-- [ ] authentication system, on top of superuser
+- [X] authentication system, on top of superuser
+- [x] medium style editor
+- [ ] next best feature?!
