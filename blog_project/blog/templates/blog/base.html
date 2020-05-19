@@ -74,8 +74,14 @@
         </div>
     </div>
     </nav>
-    {% block body_block %}
-
-    {% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block body_block %}
+            
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>
