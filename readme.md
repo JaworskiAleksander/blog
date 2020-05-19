@@ -39,4 +39,5 @@
 - [x] function views
 - [X] authentication system, on top of superuser
 - [x] medium style editor
+- [ ] css and js stuff
 - [ ] next best feature?!
