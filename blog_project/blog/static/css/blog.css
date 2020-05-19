@@ -18,30 +18,7 @@ h1{
     animation:hue 10000ms infinite linear;
    
   }
-  .loader .b1 {
-    left:42%;
-  }
-  .loader .b2 {
-    left:50%;
-    animation-delay:100ms;
-  }
-  .loader .b3 {
-    left:58%;
-    animation-delay:200ms
-  }
-  .loader .b1, 
-  .loader .b2,
-  .loader .b3 {
-    width:10px;
-    height:30px;
-    background-color:rgba(256,256,256,0.8);
-    position:absolute;
-    top:50%;
-    transform:rotate(0);
-    animation-name:spinify;
-    animation-duration:1600ms;
-    animation-iteration-count:infinite;
-  }
+  
   @keyframes spinify {
     0% {
       transform: translate(0px,0px);
