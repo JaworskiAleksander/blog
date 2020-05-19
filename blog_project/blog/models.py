@@ -4,7 +4,7 @@ from django.urls import reverse, reverse_lazy
 
 # Create your models here.
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     # charfield is for short messages
     title = models.CharField(max_length=200)
     # textield is for long messages
@@ -41,7 +41,7 @@ class Post(models.Model):
 class Comment(models.Model):
     # each comment is related to an instance of blog.Post class
     # it's connected via 'comments' alias
-    post = models.ForeignKey('blog.Post', related_name='comments')
+    post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE)
     # who's the author
     author = models.CharField(max_length=256)
     # message
