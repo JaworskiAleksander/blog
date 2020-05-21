@@ -9,5 +9,7 @@
     {% else %}
         <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-outline-secondary">Publish!</a>
     {% endif %}
+
+    <p class="post_content">{{ post.title|safe|linebreaksbr}}</p>
             
 {% endblock %}
