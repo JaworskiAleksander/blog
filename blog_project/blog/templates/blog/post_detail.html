@@ -18,5 +18,22 @@
     {% endif %}
     <hr>
     <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="btn btn-outline-primary">Add a comment</a>
+
+    <div class="container">
+        {% for comment in post.comments.all %}
+            <br>
+            {% if user.is_authenticated or comment.approved_comment %}
+                {{ comment.create_date }}
+                {% if not comment.approved_comment %}
+                    <a href="{% url 'comment_approve' pk=comment.pk s%}" class="btn btn-outline-success">
+                        Approve
+                    </a>
+                    <a href="{% url 'comment_remove' pk=comment.pk s%}" class="btn btn-outline-danger">
+                        Delete
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
             
 {% endblock %}
