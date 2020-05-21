@@ -36,6 +36,7 @@
                     </a>
                 </div>
                 {% endif %}
+                <p> {{ comment.text|safe|linebreaksbr}}</p>
             {% endif %}
         {% endfor %}
     </div>
