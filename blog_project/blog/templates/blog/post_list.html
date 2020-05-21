@@ -8,6 +8,9 @@
         <h4>
             <a href="{% url 'post_detail' pk=post.id %}">{{ post.title }}</a>
         </h4>
+        <div class="post_date">
+            <p>Published @ {{ post.published_date|date:"D M Y"}}</p>
+        </div>
     </div>
     {% endfor %}
 </div>
