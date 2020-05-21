@@ -16,5 +16,7 @@
         <a href="{% url 'post_update' pk=post.pk %}" class="btn btn-outline-success">Edit</a>
         <a href="{% url 'post_delete' pk=post.pk %}" class="btn btn-outline-danger">Delete</a>
     {% endif %}
+    <hr>
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="btn btn-outline-primary">Add a comment</a>
             
 {% endblock %}
