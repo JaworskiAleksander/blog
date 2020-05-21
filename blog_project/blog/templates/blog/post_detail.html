@@ -1,6 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block body_block %}
-<h4 class="post_title loader">{{ post.title }}</h4>
+    <h4 class="post_title loader">{{ post.title }}</h4>
+    {% if post.published_date %}
+        <div class="date post_date">
+            {{ post.published_date }}
+        </div>
+    {% else %}
+        <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-outline-secondary">Publish!</a>
+    {% endif %}
             
 {% endblock %}
