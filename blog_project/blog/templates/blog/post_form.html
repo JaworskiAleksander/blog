@@ -5,6 +5,6 @@
 <form action="" method="post" class="post-form">
     {% csrf_token %}
     {{ form.as_p }}
-
+    <button type="submit" class="btn btn-outline-success">Save</button>
 </form>
 {% endblock %}
