@@ -35,6 +35,9 @@ class Post(models.Model):
         # after the psot is created, go to post_detail.html
         # with index of self.pk
         return reverse("post_detail", kwargs={"pk": self.pk})
+
+    def get_text_pretty(self):
+        return self.text[:25]
     
 
 
