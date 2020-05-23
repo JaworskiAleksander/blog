@@ -10,7 +10,8 @@ class Post(models.Model):
     # textield is for long messages
     text = models.TextField()
     # when the post is created, set up automaticaly, user can't modify it
-    create_date = models.DateTimeField(default=timezone.now())
+    # change from () to just a link to a function that'll be executed when needed
+    create_date = models.DateTimeField(default=timezone.now)
     # when the post is publicated on the wall, user chan choose when to publish their post
     published_date = models.DateTimeField(blank=True, null=True)
     # this set up allow for creating posts in advance, and posting them in a specific order
@@ -50,7 +51,7 @@ class Comment(models.Model):
     # message
     text = models.TextField(max_length=512)
     # comment creation date, default is now(), no user has no access to this field
-    create_date = models.DateTimeField(default=timezone.now())
+    create_date = models.DateTimeField(default=timezone.now)
     # by default comment is not approved, only admin can change this field
     approved_comment = models.BooleanField(default=False)
 
