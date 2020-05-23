@@ -10,7 +10,7 @@
         <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-outline-secondary">Publish!</a>
     {% endif %}
 
-    <p class="post_content">{{ post.content|safe|linebreaksbr}}</p>
+    <p class="post_content">{{ post.text|safe|linebreaksbr}}</p>
 
     {% if user.is_authenticated %}
     <div class="btn-group" role="group">
