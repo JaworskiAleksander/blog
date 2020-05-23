@@ -57,6 +57,7 @@ class PostCreateView(CreateView, LoginRequiredMixin):
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     # defining values of atributes that come from LoginRequiredMixin class
+    fields = ('title', 'text')
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
     permission_denied_message = 'YOU HAVE NO POWER HERE!'
