@@ -196,3 +196,5 @@ pip-selfcheck.json
 myvenv/
 myvenv/*
 local_settings.py
+static/*
+static/
